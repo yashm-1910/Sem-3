@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<title>
+Design of forms
+</Title>
+<link rel="stylesheet" type="text/css" href="E:\HTML\Tutorials\main8.css"/>
+</head>
+
+<body BGCOLOR="SILVER">
+<p><font color="blue"><h4 align="center"><u>LEARNING FORM ATTRIBUTES<u></h4></font></p>
+<div>
+<form align="left" font color="green" action="" method="get">   <!--The default alignment of form is left-->
+<!--Allow you to take text input-->
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</div>
+
+<!--Allow you to take number input-->
+<br><p><font color="Red">  The Employee ID allows you to take numeric value </font> </p></br>
+
+Employee ID: <br> 
+  <input type="number" name="employeeid" min="1" max="100">
+
+<!--Allow you to take input through radio buttons-->
+<br><p><font color="Red">The Radio Buttons allows you to take inputs that are grouped together by common attribute</font></p><br>
+
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+
+<!--Allow you to take username and password-->
+<br><p><font color="Red">Allows you to take username and passord</font></p>
+User name:<br>
+  <input type="text" name="username"><br>
+  User password:<br>
+  <input type="password" name="psw">
+
+<!--Allow you to take inputs through checkboxes--> 
+<br><p><font color="Red">Allows you to take inputs through checkboxes</font></p>
+<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+<input type="checkbox" name="vehicle2" value="Car"> I have a car 
+
+<!--Allow you to take inputs through calender--> 
+<br><p><font color="Red">Allows you to take inputs through calender</font></p>
+Birthday:
+  <input type="date" name="bday">
+
+<!--Allow you to take inputs through time--> 
+<p><font color="Red">Allows you to take inputs through time</font></p>
+Select a time:
+  <input type="time" name="usr_time">
+
+
+<!--Allow you to take inputs through textarea (spaning multiple rows n cols--> 
+<p><font color="Red">Allows you to take inputs through text area</font></p>
+<textarea name="comment">Add your comment here</textarea>
+
+<!--Allow you to create dropdown lists--> 
+<p><font color="Red">Allows you to create dropdown lists</font></p>
+<select name="day" multiplesize="5">
+	<optgroup label="WeekDays">
+		<option value="Friday" selected>Friday</option>
+		<option value="Saturday">Saturday</option>
+		<option value="Sunday">Sunday</option>
+	</optgroup>
+	
+	<optgroup label="Months">
+		<option value="January" selected>January</option>
+		<option value="February">February</option>
+		<option value="March">March</option>
+	</optgroup>
+  
+</select>
+
+</form>
+
+</body>
+</html>

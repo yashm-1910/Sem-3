@@ -1,0 +1,20 @@
+
+h2{
+background-color:gray;
+}
+
+h3{
+background-color:blue;
+padding-top: 20px;
+padding-bottom: 30px;
+padding-left: 60px;
+padding-right:100px
+}
+
+p{
+color:red;
+background-color:purple;
+margin-left:20px;
+}
+
+

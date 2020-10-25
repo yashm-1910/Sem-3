@@ -1,0 +1,9 @@
+div{
+	border:5px solid green;
+	background-color:#00baff;   /* This is the way for # color */
+    width:350px
+}
+span{
+	color:green;
+	text-decoration:underline;
+}
