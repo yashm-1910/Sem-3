@@ -1,7 +1,8 @@
+// C program to insert a node in AVL tree
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
-
+// An AVL tree node
 struct Node
 {
     int key;
@@ -9,21 +10,22 @@ struct Node
     struct Node *right;
     int height;
 };
-
+// A utility function to get maximum of two integers
 int max(int a, int b);
-
+// A utility function to get the height of the tree
 int height(struct Node *N)
 {
     if (N == NULL)
         return 0;
     return N->height;
 }
-
+// A utility function to get maximum of two integers
 int max(int a, int b)
 {
     return (a > b)? a : b;
 }
-
+/* Helper function that allocates a new node with the given key and
+NULL left and right pointers. */
 struct Node* newNode(int key)
 {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
@@ -33,7 +35,8 @@ struct Node* newNode(int key)
     node->height = 1; // new node is initially added at leaf
     return(node);
 }
-
+// A utility function to right rotate subtree rooted with y
+// See the diagram given above.
 struct Node *rightRotate(struct Node *y)
 {
     struct Node *x = y->left;
@@ -47,6 +50,8 @@ struct Node *rightRotate(struct Node *y)
     // Return new root
     return x;
 }
+// A utility function to left rotate subtree rooted with x
+// See the diagram given above.
 
 struct Node *leftRotate(struct Node *x)
 {
@@ -61,14 +66,15 @@ struct Node *leftRotate(struct Node *x)
     // Return new root
     return y;
 }
-
+// Get Balance factor of node N
 int getBalance(struct Node *N)
 {
     if (N == NULL)
         return 0;
     return height(N->left) - height(N->right);
 }
-
+// Recursive function to insert a key in the subtree rooted
+// with node and returns the new root of the subtree.
 struct Node* insert(struct Node* node, int key)
 {
     /* 1. Perform the normal BST insertion */
@@ -78,6 +84,7 @@ struct Node* insert(struct Node* node, int key)
         node->left = insert(node->left, key);
     else if (key > node->key)
         node->right = insert(node->right, key);
+
     else // Equal keys are not allowed in BST
         return node;
     /* 2. Update height of this ancestor node */
@@ -110,12 +117,12 @@ struct Node* insert(struct Node* node, int key)
 
     /* return the (unchanged) node pointer */
     return node;
-    }
-    // A utility function to print preorder traversal
-    // of the tree.
-    // The function also prints height of every node
-    void preOrder(struct Node *root)
-    {
+}
+// A utility function to print preorder traversal
+// of the tree.
+// The function also prints height of every node
+void preOrder(struct Node *root)
+{
     if(root != NULL)
     {
         printf("%d ", root->key);
@@ -125,9 +132,10 @@ struct Node* insert(struct Node* node, int key)
 }
 /* Driver program to test above function*/
 int main()
-{   
+{
     int option,val;
     struct Node *root = NULL;
+    
     do
     {
         printf("\n ******MAIN MENU******* \n");
@@ -138,18 +146,19 @@ int main()
         scanf("%d", &option);
         switch(option)
         {
-        case 1:
-            printf("\n Enter the value of the new node : ");
-            scanf("%d", &val);
-            root = insert(root, val);
+            case 1:
+                printf("\n Enter the value of the new node : ");
+                scanf("%d", &val);
+                root = insert(root, val);
             break;
 
-        case 2:
-            printf("Preorder traversal of the constructed AVL tree is \n");
-            preOrder(root);
+            case 2:
+                printf("Preorder traversal of the constructed AVL tree is \n");
+                preOrder(root);
             break;
         }
     }while(option!=3);
+
     return 0;
 }
 

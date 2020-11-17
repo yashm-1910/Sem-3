@@ -1,6 +1,7 @@
 
 /*object is also called as atom
-relationships and objects always start with lowercase and end with period(.)
+facts always start with lowercase and end with period(.)
+here gold, john, mary are objects, valuable, owns, father are relationships.
 */
 
 valuable(gold).
