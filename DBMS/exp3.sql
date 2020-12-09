@@ -1,3 +1,4 @@
+
 CREATE DATABASE College;
 
 CREATE TABLE College.User(
@@ -61,3 +62,7 @@ CREATE TABLE College.Offender(
 	FOREIGN KEY (blocked_by) REFERENCES User(user_name)
 );
 
+INSERT INTO college.user VALUES ("user_1","user", "name","user@email.com","user1234",9123456780,true,20,'2000-01-01');
+INSERT INTO college.user VALUES (null,null, "name",null,"user1234",9123456780,true,20,'2000-01-01');
+INSERT INTO college.user VALUES ("user_2","user1", "name1","user@email.com","user1234",9123456780,true,20,'2001-04-11');
+SELECT * FROM college.user;

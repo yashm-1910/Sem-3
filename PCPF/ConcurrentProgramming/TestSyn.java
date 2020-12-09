@@ -7,37 +7,37 @@ void printTable(int n)
      try{  
       Thread.sleep(400);  
      }
-catch(Exception e){System.out.println(e);}  
+    catch(Exception e){System.out.println(e);}  
    }  
   }  
 }  
   
 class MyThread1 extends Thread{  
-Table t;  
-MyThread1(Table t){  
-this.t=t;  
-}  
-public void run(){  
-t.printTable(5);  
-}  
+  Table1 t;  
+  MyThread1(Table1 t){  
+    this.t=t;  
+  }  
+  public void run(){  
+    t.printTable(5);  
+  }  
   
 }  
 class MyThread2 extends Thread{  
-Table t;  
-MyThread2(Table t){  
-this.t=t;  
-}  
-public void run(){  
-t.printTable(100);  
-}  
+  Table1 t;  
+  MyThread2(Table1 t){  
+    this.t=t;  
+  }  
+  public void run(){  
+    t.printTable(100);  
+  }  
 }  
   
 class TestSyn{  
-public static void main(String args[]){  
-Table obj = new Table();//only one object  
-MyThread1 t1=new MyThread1(obj);  
-MyThread2 t2=new MyThread2(obj);  
-t1.start();  
-t2.start();  
-}  
+  public static void main(String args[]){  
+    Table1 obj = new Table1();//only one object  
+    MyThread3 t1=new MyThread3(obj);  
+    MyThread4 t2=new MyThread4(obj);  
+    t1.start();  
+    t2.start();  
+  }  
 }  
