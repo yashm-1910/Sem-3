@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
 int main(){
-    cout<<"Hello world";
+    string msg ="Hello world";
+    cout<<msg;
 }
